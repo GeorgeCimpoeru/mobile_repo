@@ -1,19 +1,11 @@
 package com.poc.p_couds.models
 
-import com.poc.p_couds.pojo.WriteBatteryResponseDataClass
-import com.poc.p_couds.pojo.WriteDoorsResponseDataClass
-import com.poc.p_couds.pojo.WriteEngineResponseDataClass
-import com.poc.p_couds.pojo.WriteHvacResponseDataClass
 import com.poc.p_couds.pojo.Authenticate
-import com.poc.p_couds.pojo.BatteryDataClass
 import com.poc.p_couds.pojo.ChangeStatus
 import com.poc.p_couds.pojo.ChangeStatusSession
-import com.poc.p_couds.pojo.DoorsDataClass
 import com.poc.p_couds.pojo.ECU
-import com.poc.p_couds.pojo.EngineDataClass
 import com.poc.p_couds.pojo.FileNode
 import com.poc.p_couds.pojo.GetIdentifiers
-import com.poc.p_couds.pojo.HVACDataClass
 import com.poc.p_couds.pojo.ReadAccesTiming
 import com.poc.p_couds.pojo.ReadAccessTimingPost
 import com.poc.p_couds.pojo.ReadDtc
@@ -32,21 +24,34 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface IApiService {
 
     //UDS
-    @GET("api/read_info_battery?is_manual_flow=false")
-    fun getInfoBattery(): Call<BatteryDataClass>
+    @GET("api/read_info_battery")
+    fun getInfoBattery(
+        @Query("is_manual_flow") isManualFlow: Boolean,
+        @Query("item") item: String
+    ): Call<Any>
 
     @GET("api/read_info_engine?is_manual_flow=false")
-    fun getInfoEngine(): Call<EngineDataClass>
+    fun getInfoEngine(
+        @Query("is_manual_flow") isManualFlow: Boolean,
+        @Query("item") item: String
+    ): Call<Any>
 
     @GET("api/read_info_doors?is_manual_flow=false")
-    fun getInfoDoors(): Call<DoorsDataClass>
+    fun getInfoDoors(
+        @Query("is_manual_flow") isManualFlow: Boolean,
+        @Query("item") item: String
+    ): Call<Any>
 
     @GET("api/read_info_hvac?is_manual_flow=false")
-    fun getInfoHVAC(): Call<HVACDataClass>
+    fun getInfoHVAC(
+        @Query("is_manual_flow") isManualFlow: Boolean,
+        @Query("item") item: String
+    ): Call<Any>
 
     @POST("api/write_info_battery")
     suspend fun writeInfoBattery(
@@ -67,6 +72,26 @@ interface IApiService {
     suspend fun writeInfoHVAC(
         @Body request: Any
     ): Response<Any>
+
+    @POST("api/write_info_battery")
+    fun writeInfoBatteryForJavaCompatibility(
+        @Body request: Any
+    ): Call<Any>
+
+    @POST("api/write_info_engine")
+    fun writeInfoEngineForJavaCompatibility(
+        @Body request: Any
+    ): Call<Any>
+
+    @POST("api/write_info_doors")
+    fun writeInfoDoorsForJavaCompatibility(
+        @Body request: Any
+    ): Call<Any>
+
+    @POST("api/write_info_hvac")
+    fun writeInfoHVACForJavaCompatibility(
+        @Body request: Any
+    ): Call<Any>
 
     @GET("api/read_dtc_info")
     fun getBatteryDTC(): Call<Any>

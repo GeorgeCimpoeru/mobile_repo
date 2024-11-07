@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/read_engine_all"
+        android:title="All"
+        />
+    <item
+        android:id="@+id/read_engine_coolant_temperature"
+        android:title="Coolant temperature"
+        />
+    <item
+        android:id="@+id/read_engine_load"
+        android:title="Engine load"
+        />
+    <item
+        android:id="@+id/read_engine_RPM"
+        android:title="Engine RPM"
+        />
+    <item
+        android:id="@+id/read_engine_fuel_level"
+        android:title="Fuel level"
+        />
+    <item
+        android:id="@+id/read_engine_fuel_pressure"
+        android:title="Fuel pressure"
+        />
+    <item
+        android:id="@+id/read_engine_intake_air_temperature"
+        android:title="Intake air temperature"
+        />
+    <item
+        android:id="@+id/read_engine_oil_temperature"
+        android:title="Oil temperature"
+        />
+    <item
+        android:id="@+id/read_engine_throttle_position"
+        android:title="Throttle position"
+        />
+    <item
+        android:id="@+id/read_engine_vehicle_speed"
+        android:title="Vehicle speed"
+        />
+</menu>

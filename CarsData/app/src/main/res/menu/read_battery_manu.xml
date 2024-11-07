@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/read_battery_all"
+        android:title="All"
+        />
+    <item
+        android:id="@+id/read_battery_level"
+        android:title="Level"
+        />
+    <item
+        android:id="@+id/read_battery_state_of_charge"
+        android:title="State of charge"
+        />
+    <item
+        android:id="@+id/read_battery_percentage"
+        android:title="Percentage"
+        />
+    <item
+        android:id="@+id/read_battery_voltage"
+        android:title="Voltage"
+        />
+</menu>

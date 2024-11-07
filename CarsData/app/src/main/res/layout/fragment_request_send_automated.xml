@@ -250,84 +250,74 @@
                         android:textAllCaps="false" />
 
                     <Button
-                        android:id="@+id/q7"
-                        android:layout_width="130dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="15dp"
-                        android:background="@drawable/custom_button"
-                        android:text="@string/read_battery_param"
+                        android:id="@+id/dropdown_button_read_battery"
+                        android:layout_width="150dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/custom_button_with_dropdown_arrow"
+                        android:text="@string/read_info_battery"
                         android:textAllCaps="false" />
 
                     <Button
-                        android:id="@+id/q8"
-                        android:layout_width="130dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="15dp"
-                        android:background="@drawable/custom_button"
-                        android:text="@string/write_battery_param"
+                        android:id="@+id/dropdown_button_write_battery"
+                        android:layout_width="150dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/custom_button_with_dropdown_arrow"
+                        android:text="@string/write_info_battery"
                         android:textAllCaps="false" />
 
                     <Button
-                        android:id="@+id/q9"
-                        android:layout_width="130dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="15dp"
-                        android:background="@drawable/custom_button"
+                        android:id="@+id/dropdown_button_read_engine"
+                        android:layout_width="150dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/custom_button_with_dropdown_arrow"
                         android:text="@string/read_info_engine"
                         android:textAllCaps="false" />
 
                     <Button
-                        android:id="@+id/q10"
-                        android:layout_width="130dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="15dp"
-                        android:background="@drawable/custom_button"
+                        android:id="@+id/dropdown_button_write_engine"
+                        android:layout_width="150dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/custom_button_with_dropdown_arrow"
                         android:text="@string/write_info_engine"
                         android:textAllCaps="false" />
 
                     <Button
-                        android:id="@+id/q11"
-                        android:layout_width="130dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="15dp"
-                        android:background="@drawable/custom_button"
+                        android:id="@+id/dropdown_button_read_doors"
+                        android:layout_width="150dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/custom_button_with_dropdown_arrow"
                         android:text="@string/read_info_doors"
                         android:textAllCaps="false" />
 
                     <Button
-                        android:id="@+id/q12"
-                        android:layout_width="130dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="15dp"
-                        android:background="@drawable/custom_button"
-                        android:text="@string/write_doors_info"
+                        android:id="@+id/dropdown_button_write_doors"
+                        android:layout_width="150dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/custom_button_with_dropdown_arrow"
+                        android:text="@string/write_info_doors"
                         android:textAllCaps="false" />
 
                     <Button
-                        android:id="@+id/q13"
-                        android:layout_width="130dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="15dp"
-
-                        android:background="@drawable/custom_button"
+                        android:id="@+id/dropdown_button_read_hvac"
+                        android:layout_width="150dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/custom_button_with_dropdown_arrow"
                         android:text="@string/read_info_hvac"
                         android:textAllCaps="false" />
 
                     <Button
-                        android:id="@+id/q14"
-                        android:layout_width="130dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="15dp"
-
-                        android:background="@drawable/custom_button"
+                        android:id="@+id/dropdown_button_write_hvac"
+                        android:layout_width="150dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/custom_button_with_dropdown_arrow"
                         android:text="@string/write_info_hvac"
                         android:textAllCaps="false" />
 
