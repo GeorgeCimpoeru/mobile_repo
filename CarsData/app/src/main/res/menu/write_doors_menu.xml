@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/write_doors_ajar"
+        android:title="Ajar"
+        />
+    <item
+        android:id="@+id/write_doors_state_of_door"
+        android:title="Door state"
+        />
+    <item
+        android:id="@+id/write_doors_passenger"
+        android:title="Passenger"
+        />
+    <item
+        android:id="@+id/write_doors_passenger_lock"
+        android:title="Passenger lock"
+        />
+</menu>

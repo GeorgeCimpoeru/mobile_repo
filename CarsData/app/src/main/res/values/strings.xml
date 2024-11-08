@@ -52,13 +52,12 @@
     <string name="response">Response</string>
     <string name="uds_services">UDS Services</string>
     <string name="ota_services">OTA Services</string>
-    <string name="write_battery_param">Write battery param</string>
+    <string name="write_info_battery">Write Info Battery</string>
     <string name="read_info_engine">Read Info Engine</string>
     <string name="write_info_engine">Write Info Engine</string>
     <string name="read_info_doors">Read Info Doors</string>
-    <string name="write_doors_info">Write Doors Info</string>
-    <string name="read_battery_param">Read battery param</string>
+    <string name="write_info_doors">Write Info Doors</string>
+    <string name="read_info_battery">Read Info Battery</string>
     <string name="read_info_hvac">Read Info HVAC</string>
     <string name="write_info_hvac">Write Info HVAC</string>
-
 </resources>

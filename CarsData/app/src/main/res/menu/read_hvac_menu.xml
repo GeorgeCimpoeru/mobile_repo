@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/read_hvac_all"
+        android:title="All"
+        />
+    <item
+        android:id="@+id/read_hvac_ambient_air_temperature"
+        android:title="Ambient air temperature"
+        />
+    <item
+        android:id="@+id/read_hvac_cabin_temperature"
+        android:title="Cabin temperature"
+        />
+    <item
+        android:id="@+id/read_hvac_driver_seat_temperature"
+        android:title="Driver seat temperature"
+        />
+    <item
+        android:id="@+id/read_hvac_fan_speed"
+        android:title="Fan speed"
+        />
+    <item
+        android:id="@+id/read_hvac_mass_air_flow"
+        android:title="Mass air flow"
+        />
+</menu>
