@@ -61,14 +61,14 @@ class EcusInfoViewModel : ViewModel() {
     fun fetchBatteryInfo(context: Context) {
         _loading.value = true
         viewModelScope.launch {
-            val call = APIClient.getClient().create(IApiService::class.java).getInfoBattery()
-            call.enqueue(object : Callback<BatteryDataClass> {
+            val call = APIClient.getClient().create(IApiService::class.java).getInfoBattery(false, "")
+            call.enqueue(object : Callback<Any> {
                 override fun onResponse(
-                    call: Call<BatteryDataClass>,
-                    response: Response<BatteryDataClass>
+                    call: Call<Any>,
+                    response: Response<Any>
                 ) {
                     if (response.isSuccessful) {
-                        batteryInfo = response.body()
+                        batteryInfo = response.body() as BatteryDataClass
                     } else {
                         Toast.makeText(context, "Read battery info failed", Toast.LENGTH_SHORT)
                             .show()
@@ -77,7 +77,7 @@ class EcusInfoViewModel : ViewModel() {
                     _loading.value = false
                 }
 
-                override fun onFailure(call: Call<BatteryDataClass>, t: Throwable) {
+                override fun onFailure(call: Call<Any>, t: Throwable) {
                     Toast.makeText(context, "Read battery info failed", Toast.LENGTH_SHORT).show()
                     errorMessageBattery = t.message
                     _loading.value = false
@@ -90,9 +90,7 @@ class EcusInfoViewModel : ViewModel() {
         var writeBatteryInfoRequest: Any = ""
         when (title) {
             "Battery level" -> writeBatteryInfoRequest = WriteBatteryLevelDataClass(inputText)
-            "State of charge" -> writeBatteryInfoRequest =
-                WriteBatteryChargeStateDataClass(inputText)
-
+            "State of charge" -> writeBatteryInfoRequest = WriteBatteryChargeStateDataClass(inputText)
             "Percentage" -> writeBatteryInfoRequest = WriteBatteryPercentageDataClass(inputText)
             "Voltage" -> writeBatteryInfoRequest = WriteBatteryVoltageDataClass(inputText)
         }
@@ -136,14 +134,14 @@ class EcusInfoViewModel : ViewModel() {
     fun fetchEngineInfo(context: Context) {
         _loading.value = true
         viewModelScope.launch {
-            val call = APIClient.getClient().create(IApiService::class.java).getInfoEngine()
-            call.enqueue(object : Callback<EngineDataClass> {
+            val call = APIClient.getClient().create(IApiService::class.java).getInfoEngine(false, "")
+            call.enqueue(object : Callback<Any> {
                 override fun onResponse(
-                    call: Call<EngineDataClass>,
-                    response: Response<EngineDataClass>
+                    call: Call<Any>,
+                    response: Response<Any>
                 ) {
                     if (response.isSuccessful) {
-                        engineInfo = response.body()
+                        engineInfo = response.body() as EngineDataClass
                     } else {
                         Toast.makeText(context, "Read engine info failed", Toast.LENGTH_SHORT)
                             .show()
@@ -152,7 +150,7 @@ class EcusInfoViewModel : ViewModel() {
                     _loading.value = false
                 }
 
-                override fun onFailure(call: Call<EngineDataClass>, t: Throwable) {
+                override fun onFailure(call: Call<Any>, t: Throwable) {
                     Toast.makeText(context, "Read engine info failed", Toast.LENGTH_SHORT).show()
                     errorMessageEngine = t.message
                     _loading.value = false
@@ -169,13 +167,9 @@ class EcusInfoViewModel : ViewModel() {
             "Rpm" -> writeEngineInfoRequest = WriteEngineRpmDataClass(inputText)
             "Fuel" -> writeEngineInfoRequest = WriteEngineFuelLevelDataClass(inputText)
             "Fuel pressure" -> writeEngineInfoRequest = WriteEngineFuelPressureDataClass(inputText)
-            "Intake air temp" -> writeEngineInfoRequest =
-                WriteEngineIntakeAirTempDataClass(inputText)
-
+            "Intake air temp" -> writeEngineInfoRequest = WriteEngineIntakeAirTempDataClass(inputText)
             "Oil temp" -> writeEngineInfoRequest = WriteEngineOilTempDataClass(inputText)
-            "Throttle position" -> writeEngineInfoRequest =
-                WriteEngineThrottlePosDataClass(inputText)
-
+            "Throttle position" -> writeEngineInfoRequest = WriteEngineThrottlePosDataClass(inputText)
             "Speed" -> writeEngineInfoRequest = WriteEngineSpeedDataClass(inputText)
         }
         viewModelScope.launch {
@@ -224,14 +218,14 @@ class EcusInfoViewModel : ViewModel() {
     fun fetchDoorsInfo(context: Context) {
         _loading.value = true
         viewModelScope.launch {
-            val call = APIClient.getClient().create(IApiService::class.java).getInfoDoors()
-            call.enqueue(object : Callback<DoorsDataClass> {
+            val call = APIClient.getClient().create(IApiService::class.java).getInfoDoors(false, "")
+            call.enqueue(object : Callback<Any> {
                 override fun onResponse(
-                    call: Call<DoorsDataClass>,
-                    response: Response<DoorsDataClass>
+                    call: Call<Any>,
+                    response: Response<Any>
                 ) {
                     if (response.isSuccessful) {
-                        doorsInfo = response.body()
+                        doorsInfo = response.body() as DoorsDataClass
                     } else {
                         Toast.makeText(context, "Read doors info failed", Toast.LENGTH_SHORT).show()
                         errorMessageDoors = "Failed to retrieve data"
@@ -239,7 +233,7 @@ class EcusInfoViewModel : ViewModel() {
                     _loading.value = false
                 }
 
-                override fun onFailure(call: Call<DoorsDataClass>, t: Throwable) {
+                override fun onFailure(call: Call<Any>, t: Throwable) {
                     Toast.makeText(context, "Read doors info failed", Toast.LENGTH_SHORT).show()
                     errorMessageDoors = t.message
                     _loading.value = false
@@ -297,14 +291,14 @@ class EcusInfoViewModel : ViewModel() {
     fun fetchHvacInfo(context: Context) {
         _loading.value = true
         viewModelScope.launch {
-            val call = APIClient.getClient().create(IApiService::class.java).getInfoHVAC()
-            call.enqueue(object : Callback<HVACDataClass> {
+            val call = APIClient.getClient().create(IApiService::class.java).getInfoHVAC(false, "")
+            call.enqueue(object : Callback<Any> {
                 override fun onResponse(
-                    call: Call<HVACDataClass>,
-                    response: Response<HVACDataClass>
+                    call: Call<Any>,
+                    response: Response<Any>
                 ) {
                     if (response.isSuccessful) {
-                        hvacInfo = response.body()
+                        hvacInfo = response.body() as HVACDataClass
                     } else {
                         Toast.makeText(context, "Read HVAC info failed", Toast.LENGTH_SHORT).show()
                         errorMessageHvac = "Failed to retrieve data"
@@ -312,7 +306,7 @@ class EcusInfoViewModel : ViewModel() {
                     _loading.value = false
                 }
 
-                override fun onFailure(call: Call<HVACDataClass>, t: Throwable) {
+                override fun onFailure(call: Call<Any>, t: Throwable) {
                     Toast.makeText(context, "Read HVAC info failed", Toast.LENGTH_SHORT).show()
                     errorMessageHvac = t.message
                     _loading.value = false
@@ -326,9 +320,7 @@ class EcusInfoViewModel : ViewModel() {
         when (title) {
             "Ambient temp" -> writeHVACInfoRequest = WriteHvacAmbientAirTempDataClass(inputText)
             "Cabin temp" -> writeHVACInfoRequest = WriteHvacCabinTempDataClass(inputText)
-            "Driver set temp" -> writeHVACInfoRequest =
-                WriteHvacCabinTempDriverSetDataClass(inputText)
-
+            "Driver set temp" -> writeHVACInfoRequest = WriteHvacCabinTempDriverSetDataClass(inputText)
             "Fan speed" -> writeHVACInfoRequest = WriteHvacFanSpeedDataClass(inputText)
             "AC status" -> writeHVACInfoRequest = WriteHvacModesDataClass(inputText)
             "Air recirc" -> writeHVACInfoRequest = WriteHvacModesDataClass(inputText)
